@@ -14,17 +14,21 @@ func Hello(nome string, idioma string) string {
 		nome = "Word"
 	}
 
-	prefixo := prefixHelloPortugues
+	return prefixodeSaudacao(idioma) + nome
 
+}
+
+func prefixodeSaudacao(idioma string) (prefixo string) {
 	switch idioma {
 	case espanhol:
 		prefixo = prefixHelloEspanhol
 	case frances:
 		prefixo = prefixHelloFrances
+	default:
+		prefixo = prefixHelloPortugues
 	}
 
-	return prefixo + nome
-
+	return
 }
 func main() {
 	fmt.Println(Hello("junior", "francês"))
