@@ -2,14 +2,30 @@ package main
 
 import "fmt" //pacote que tem a função Println
 
-const prefixHelloPortuges = "Hello, "
+const frances = "francês"
+const prefixHelloFrances = "Bonjour, "
+const espanhol = "espanhol"
+const prefixHelloEspanhol = "Hola, "
+const prefixHelloPortugues = "Hello, "
 
-func Hello(nome string) string {
+func Hello(nome string, idioma string) string {
+
 	if nome == "" {
 		nome = "Word"
 	}
-	return prefixHelloPortuges + nome
+
+	prefixo := prefixHelloPortugues
+
+	switch idioma {
+	case espanhol:
+		prefixo = prefixHelloEspanhol
+	case frances:
+		prefixo = prefixHelloFrances
+	}
+
+	return prefixo + nome
+
 }
 func main() {
-	fmt.Println(Hello("Word"))
+	fmt.Println(Hello("junior", "francês"))
 }

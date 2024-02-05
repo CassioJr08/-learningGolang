@@ -11,16 +11,28 @@ func TestHellow(t *testing.T) {
 		}
 	}
 	t.Run("diz hello para as pessoas", func(t *testing.T) {
-		resultado := Hello("Word")
+		resultado := Hello("Word", "")
 		esperado := "Hello, Word"
 
 		verificarMensagemCorreta(t, resultado, esperado)
 	})
 
 	t.Run("diz 'Hello, Word' quando uma string vazia for passada", func(t *testing.T) {
-		resultado := Hello("")
+		resultado := Hello("", "")
 		esperado := "Hello, Word"
 
+		verificarMensagemCorreta(t, resultado, esperado)
+	})
+
+	t.Run("em, espanhol", func(t *testing.T) {
+		resultado := Hello("Elodie", "espanhol")
+		esperado := "Hola, Elodie"
+		verificarMensagemCorreta(t, resultado, esperado)
+	})
+
+	t.Run("em francês", func(t *testing.T) {
+		resultado := Hello("Princeso", "francês")
+		esperado := "Bonjour, Princeso"
 		verificarMensagemCorreta(t, resultado, esperado)
 	})
 }
