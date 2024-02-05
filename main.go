@@ -2,9 +2,14 @@ package main
 
 import "fmt" //pacote que tem a função Println
 
-func Ola(nome string) string {
-	return "Olá, " + nome
+const prefixHelloPortuges = "Hello, "
+
+func Hello(nome string) string {
+	if nome == "" {
+		nome = "Word"
+	}
+	return prefixHelloPortuges + nome
 }
 func main() {
-	fmt.Println(Ola("mundo"))
+	fmt.Println(Hello("Word"))
 }
