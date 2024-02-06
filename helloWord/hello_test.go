@@ -5,7 +5,7 @@ import "testing"
 func TestHellow(t *testing.T) {
 
 	verificarMensagemCorreta := func(t *testing.T, resultado, esperado string) {
-		t.Helper()
+		t.Helper() //Ao fazer isso, quando o teste falhar, o número da linha relatada estará em nossa chamada de função, e não dentro do nosso auxiliar de teste.
 		if resultado != esperado {
 			t.Errorf("resultado '%s', esperado '%s'", resultado, esperado)
 		}
